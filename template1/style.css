@@ -88,24 +88,6 @@ body {
     animation-delay: 0.7s;
 }
 
-.home-content h3 span {
-    color: #0ef;
-    position: relative;
-}
-
-.home-content h3 span::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: #1f242d;
-    border-left: 2px solid #0ef;
-    animation: animate 4s steps(20) infinite;
-    animation-delay: 0.7s;
-}
-
 
 .home-content h3:nth-of-type(2) {
     margin-bottom: 28px;
@@ -113,6 +95,53 @@ body {
     animation: slideTop 1s ease forwards;
     animation-delay: 0.7s;
 }
+
+.type-wrapper {
+    display: flex;
+}
+
+.type-wrapper .first-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.type-wrapper .sec-text {
+    position: relative;
+    font-size: 30px;
+    color: #0ef;
+    list-style: none;
+    padding: 0 20px;
+    text-shadow: 0 0 10px #0ef;
+    height: 90px;
+    line-height: 90px;
+    overflow: hidden;
+}
+
+.type-wrapper .sec-text li {
+    position: relative;
+    top: 0;
+    animation: slide 12s steps(4) infinite;
+    animation-delay: 0.7s;
+}
+
+.type-wrapper .sec-text li span {
+    position: relative;
+}
+
+.type-wrapper .sec-text li span::before {
+    content: "";
+    position: absolute;
+    left: 0%;
+    top: 0;
+    width: 400px;
+    height: 40px;
+    background-color: #1f242d;
+    border-left: 2px solid #0ef;
+    animation: typing 1.5s steps(10) infinite alternate;
+    animation-delay: 0.7s;
+}
+
 
 .home-content p {
     font-size: 12px;
@@ -249,5 +278,25 @@ body {
     }
     40%, 60% {
         left: 100%;
+    }
+}
+
+@keyframes slide {
+    100% {
+        top: -360px;
+    }
+}
+
+@keyframes colorful {
+    100% {
+        filter: hue-rotate(360deg)
+    }
+}
+
+@keyframes typing {
+    100% {
+        left: 115%;
+        /* right: 0%; */
+        /* margin: 0 -35px 0 35px; */
     }
 }
